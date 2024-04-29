@@ -1,0 +1,61 @@
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+
+  &.list-group-item-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+
+  &.list-group-item-danger {
+    background-color: #efeaea;
+    border-color: #efeaea;
+  }
+
+  &.border-primary {
+    border-color: #007bff;
+  }
+
+  .text-danger {
+    color: red;
+  }
+}
+
+.form-check {
+  display: inline-flex;
+  align-items: center;
+}
+
+.form-check-input {
+  margin-right: 0.5rem;
+}
+
+.float-right {
+  display: flex;
+  align-items: center;
+  column-gap: 45px;
+  .favorite {
+    border: none;
+    background-color: transparent;
+  }
+  .btn-danger {
+    border: none;
+    color: white;
+    background-color: red;
+  }
+  .red {
+    color: red;
+  }
+}
+
+.btn {
+  cursor: pointer;
+}
+
+
+

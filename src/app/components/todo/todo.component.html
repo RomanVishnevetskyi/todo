@@ -1,0 +1,27 @@
+
+<li class="list-group-item" [ngClass]="toggleClass()"
+>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="complete" (change)="onChange()"
+    >
+    <label for="complete" class="form-check-label">{{todoInput.title | shortenText: 50}}</label>
+  </div>
+  <div class="float-right">
+    <div class="">{{todoInput.createdAt | date}}</div>
+    <div class="" *ngIf="typeTodo !=='today'">{{todoInput.expiration | date}}</div>
+    <div class="" *ngIf="typeTodo==='today'" >
+      <span
+        [ngClass]="redText ? 'red': ''">
+      {{remainingTime}}
+      </span>
+    </div>
+
+    <button mat-icon-button color="warn" class="favorite" (click)='isFavorite()' [ngClass]="todoInput.isFavorite ? 'text-danger' : '' ">
+      <mat-icon>favorite</mat-icon>
+    </button>
+
+    <div>
+    <button class="btn btn-danger" (click)="deleteTodo(todoInput)">X</button>
+    </div>
+  </div>
+</li>

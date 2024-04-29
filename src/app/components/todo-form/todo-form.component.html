@@ -1,0 +1,43 @@
+<div class="todo">
+  <div>
+    <h4>ADD TODO</h4>
+  </div>
+
+  <form class="example-form" [formGroup]="todos" (submit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <textarea  matInput formControlName="title" placeholder="Title"></textarea>
+      @if (todos.controls.title.hasError('required')) {
+      <mat-error>Please enter title</mat-error>
+      }
+      @if (todos.controls.title.hasError('maxlength')) {
+      <mat-error>Title is <strong>maxlength is 100 symbols</strong></mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="expirationDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      @if (todos.controls.expirationDate.hasError('required')) {
+      <mat-error>Please enter date</mat-error>
+      }
+      @if (todos.controls.expirationDate.hasError('expirationDateTimeInvalid')) {
+      <mat-error>wrong pick data </mat-error>
+      }
+    </mat-form-field>
+
+    <div class="24hr-example">
+      <input placeholder="24hr format" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly formControlName="expirationTime">
+      <ngx-material-timepicker #fullTime></ngx-material-timepicker>
+      @if (todos.controls.expirationDate.hasError('expirationDateTimeInvalid')) {
+      <mat-error>wrong pick time </mat-error>
+      }
+    </div>
+    <button mat-raised-button color="primary">ADD</button>
+  </form>
+</div>
+
+

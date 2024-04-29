@@ -1,0 +1,32 @@
+.card {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  &.shadow {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  }
+
+  &-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  &-body {
+    padding: 1.25rem;
+
+    .list-group {
+      display: flex;
+      flex-direction: column;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .sub-header {
+      display: flex;
+      column-gap: 45px;
+      padding-left: 400px;
+    }
+  }
+}
+
+

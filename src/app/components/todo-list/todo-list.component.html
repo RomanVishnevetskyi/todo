@@ -1,0 +1,39 @@
+<!--Today List-->
+<div class="card shadow" *ngIf="viewList">
+  <h5 class="card-header">My Today List</h5>
+  <div class="card-body">
+    <div class="sub-header">
+      <div>Created At</div>
+      <div>Time left</div>
+    </div>
+    <ul class="list-group" *ngFor="let todo of todoService.today">
+      <app-todo [todoInput]="todo" [typeList]="'list'" [typeTodo]="'today'"></app-todo>
+    </ul>
+  </div>
+</div>
+
+<!--Todos List-->
+<div class="card shadow" *ngIf="viewList">
+  <h5 class="card-header">My Todo's List</h5>
+  <div class="card-body">
+    <div class="sub-header">
+      <div>Created At</div>
+      <div>Expiration</div>
+    </div>
+    <ul class="list-group" *ngFor="let todo of todoService.todoList">
+      <app-todo [todoInput]="todo" [typeList]="'list'" [typeTodo]="'todo'"></app-todo>
+    </ul>
+  </div>
+</div>
+
+
+<!--Favotite List-->
+<div class="card shadow" *ngIf="!viewList">
+  <h5 class="card-header">My Favorite List</h5>
+  <div class="card-body">
+    <ul class="list-group" *ngFor="let todo of todoService.fav">
+      <app-todo [todoInput]="todo" [typeList]="'favorite'" [typeTodo]="'favorite'"></app-todo>
+    </ul>
+  </div>
+</div>
+
